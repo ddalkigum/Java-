@@ -1,4 +1,4 @@
-package com.example.structure.array;
+package com.example.structure;
 
 import java.util.EmptyStackException;
 
