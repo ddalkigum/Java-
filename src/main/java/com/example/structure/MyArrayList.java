@@ -2,9 +2,10 @@ package com.example.structure;
 
 import com.example.structure.interfaces.MyList;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MyArrayList<E> implements MyList<E> {
+public class MyArrayList<E> implements MyList<E>, Cloneable {
 
     private static final int DEFAULT_CAPACITY = 10;
     private static final Object[] EMPTY_ARRAY = {};
@@ -161,5 +162,13 @@ public class MyArrayList<E> implements MyList<E> {
 
         size = 0;
         resize();
+    }
+
+    public Object clone() throws CloneNotSupportedException {
+        MyArrayList<?> cloneList = (MyArrayList<?>) super.clone();
+        cloneList.array = new Object[size];
+        System.arraycopy(array, 0, cloneList.array, 0, size);
+
+        return cloneList;
     }
 }

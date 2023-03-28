@@ -143,4 +143,22 @@ class MyArrayListTest {
 
         assertThat(arrList.size()).isEqualTo(0);
     }
+
+    @Test
+    @DisplayName("깊은 복사를 이용하여 리스트를 복제한다, 주소값 비교")
+    @SuppressWarnings("unchecked")
+    void cloneTest() throws CloneNotSupportedException {
+        MyArrayList<String> clonedArrList = (MyArrayList<String>) arrList.clone();
+        int originAddress = System.identityHashCode(arrList);
+        int clonedAddress = System.identityHashCode(clonedArrList);
+
+        assertThat(originAddress).isNotEqualTo(clonedAddress);
+
+        clonedArrList.set(1, testWord3);
+
+        String originValue = arrList.get(1);
+        String changedValue = clonedArrList.get(1);
+
+        assertThat(originValue).isNotEqualTo(changedValue);
+    }
 }
