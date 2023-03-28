@@ -23,6 +23,4 @@ public interface MyQueue<E> {
      * @return 큐의 첫 번째 요소 반환
      */
     E peek();
-
-
 }
