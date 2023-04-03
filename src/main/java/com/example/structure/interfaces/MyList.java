@@ -28,7 +28,7 @@ public interface MyList<E> {
      * @return 리스트에서 삭제할 요소가 없거나 삭제에 실패할 경우
      *         {@code false}를 반환하고 성공할 경우 {@code true}를 반환한다
      */
-    boolean remove(Object value);
+    boolean remove(E value);
 
     /**
      * 리스트에서 특정 인덱스에 있는 값을 삭제한다

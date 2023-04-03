@@ -3,7 +3,6 @@ package com.example.structure;
 import com.example.structure.interfaces.MyQueue;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.NoSuchElementException;
 
 public class ArrayQueue<E> implements MyQueue<E> {
